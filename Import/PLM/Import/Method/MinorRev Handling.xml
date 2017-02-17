@@ -1,0 +1,67 @@
+﻿<AML>
+ <Item type="Method" id="0EEC765DCE0C4D9B934696EDF9E7134B" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[// method name: MinorRev Handling
+// Server side mehtod to increase 2digit minor revision. 
+// Minor revision will be reset, if new major revision is created.
+//
+// @author: Rolf Laudenbach
+// @since:  06.04.2011
+// @change: 11.04.2011 Anita Peter (IPEK) change numbering of minor revision
+//
+// @return: this (item context)
+//
+// ServerEvent: onAfterVersion  - of verionable ItemsTypes
+// NOTE: should be last method listed for this event
+//
+// When adding to an ItemType make sure to set the default value
+// of system property "minor_rev" to "01" and to set this property to "ReadOnly"
+//---------------------------------
+
+//System.Diagnostics.Debugger.Break();
+
+Innovator inn = this.getInnovator();
+
+String thisItemConfigId = this.getProperty("config_id");
+String thisGen = this.getProperty("generation");
+String thisItemType = this.getType();
+
+Item newVerItem = inn.newItem(thisItemType, "get");
+newVerItem.setAttribute("select", "keyed_name,config_id,major_rev,minor_rev,id,generation,item_number,name");
+newVerItem.setProperty("config_id",thisItemConfigId);
+newVerItem = newVerItem.apply();
+
+String majorRev = this.getProperty("major_rev","");
+String minorRev = this.getProperty("minor_rev","0");
+
+String newMajorRev = newVerItem.getProperty("major_rev","");
+String newMinorRev = newVerItem.getProperty("minor_rev","0");
+String newGen = newVerItem.getProperty("generation");
+
+if (newMajorRev != majorRev)
+{
+  // reset minor revision
+  newMinorRev="01"; 
+}
+else
+{
+  // increase minor revision
+  int iMinorRev = int.Parse(minorRev);
+  iMinorRev = iMinorRev +1;
+  newMinorRev = iMinorRev.ToString();
+  if (newMinorRev.Length < 2) {newMinorRev = "0" + newMinorRev;}
+}
+
+// force update to Database - permission handling not important here
+String itemTypeTable = thisItemType.Replace(" ","_");
+String SQL = "UPDATE [" + itemTypeTable + "] SET ";
+SQL += "[" + itemTypeTable + "].minor_rev='" + newMinorRev + "'";
+SQL += " WHERE [" + itemTypeTable + "].id='" + newVerItem.getID() + "'";
+
+Item res = inn.applySQL(SQL);
+
+return this;]]></method_code>
+  <method_type>C#</method_type>
+  <name>MinorRev Handling</name>
+ </Item>
+</AML>

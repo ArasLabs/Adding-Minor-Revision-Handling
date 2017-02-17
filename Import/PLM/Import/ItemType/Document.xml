@@ -1,0 +1,33 @@
+﻿<AML>
+ <Item type="ItemType" id="B88C14B99EF449828C5D926E39EE8B89" action="add">
+  <name>Document</name>
+  <Relationships>
+   <Item type="Server Event" id="9F55DF2156814C5EAD4BCDBB2708D4EE" action="add">
+    <related_id keyed_name="MinorRev Handling" type="Method">
+     <Item type="Method" action="get" select="id">
+      <name>MinorRev Handling</name>
+     </Item>
+    </related_id>
+    <server_event>onAfterVersion</server_event>
+    <sort_order>999</sort_order>
+    <source_id keyed_name="Document" type="ItemType" name="Document">B88C14B99EF449828C5D926E39EE8B89</source_id>
+   </Item>
+  </Relationships>
+ </Item>
+ <Item type="ItemType" id="B88C14B99EF449828C5D926E39EE8B89" action="edit">
+  <Relationships>
+   <Item type="Property" action="merge" where="source_id='B88C14B99EF449828C5D926E39EE8B89' and name='minor_rev'">
+    <column_alignment>left</column_alignment>
+    <column_width>50</column_width>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <label xml:lang="en">MinRev</label>
+    <name>minor_rev</name>
+    <default_value>01</default_value>
+    <sort_order>257</sort_order>
+    <source_id keyed_name="Document" type="ItemType" name="Document">B88C14B99EF449828C5D926E39EE8B89</source_id>
+   </Item>
+  </Relationships>
+ </Item>
+ 
+</AML>

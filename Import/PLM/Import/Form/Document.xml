@@ -1,0 +1,68 @@
+﻿<AML>
+ <Item type="Form" id="D95D1B10CE6D47CDB7AE755108DBA13D" action="add">
+  <name>Document</name>
+  <Relationships>
+   <Item type="Body" id="1616C23245254BAD80BECBEC29A02D16" action="add">
+    <source_id keyed_name="Document" type="Form">D95D1B10CE6D47CDB7AE755108DBA13D</source_id>
+    <Relationships>
+     <Item type="Field" id="3EB0DFAC000643D2B191E9648E991249" action="add">
+      <border_width>0</border_width>
+      <display_length>1</display_length>
+      <field_type>text</field_type>
+      <font_color>#000000</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">MinRev</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <name>minor_rev</name>
+      <sort_order>4608</sort_order>
+      <source_id keyed_name="1616C23245254BAD80BECBEC29A02D16" type="Body">1616C23245254BAD80BECBEC29A02D16</source_id>
+      <propertytype_id keyed_name="minor_rev">1514E0D165424F8EBD448A0B5577B31B</propertytype_id>
+      <tab_index>257</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>390</x>
+      <y>10</y>
+     </Item>
+     <Item type="Field" id="2953A7658D0A43838F5E2E5284D6EB45" action="add">
+      <name>state</name>
+      <source_id keyed_name="1616C23245254BAD80BECBEC29A02D16" type="Body">1616C23245254BAD80BECBEC29A02D16</source_id>
+      <x>436</x>
+      <y>10</y>
+     </Item>
+     <Item type="Field" id="F6905EC0C0834B539B0CAA62141A32FE" action="add">
+      <name>effective_date</name>
+      <source_id keyed_name="1616C23245254BAD80BECBEC29A02D16" type="Body">1616C23245254BAD80BECBEC29A02D16</source_id>
+      <x>568</x>
+      <y>130</y>
+     </Item>
+     <Item type="Field" id="9242EF89D2B04FDE9002FD6626E7F04A" action="add">
+      <name>owned_by_id</name>
+      <source_id keyed_name="1616C23245254BAD80BECBEC29A02D16" type="Body">1616C23245254BAD80BECBEC29A02D16</source_id>
+      <x>568</x>
+      <y>50</y>
+     </Item>
+     <Item type="Field" id="E845543AF33A42138646506403AAB575" action="add">
+      <name>managed_by_id</name>
+      <source_id keyed_name="1616C23245254BAD80BECBEC29A02D16" type="Body">1616C23245254BAD80BECBEC29A02D16</source_id>
+      <x>567</x>
+      <y>88</y>
+     </Item>
+    </Relationships>
+   </Item>
+  </Relationships>
+ </Item>
+
+ <Item type="Field" id="3EB0DFAC000643D2B191E9648E991249" action="edit">
+  <propertytype_id>
+   <Item type="Property" action="get" select="id">
+    <name>minor_rev</name>
+    <source_id type="ItemType" keyed_name="Document">B88C14B99EF449828C5D926E39EE8B89</source_id>
+   </Item>
+  </propertytype_id>
+ </Item>
+
+</AML>
