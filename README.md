@@ -44,7 +44,9 @@ You are now ready to login to Aras and try out kanban like task management
 * lock, modify, save and unlock multiple times to see the minor rev incrementing in the information
 * Set yourself as the **Assigned Creator**
 * create a nex revision (Actions->Create New Revision)
-* The Minor Rev is back to 0
+* The Minor Rev is back to 01
+
+![Customized Part Form](./screenshots/minRev.png)
 
 ## Contributing
 
